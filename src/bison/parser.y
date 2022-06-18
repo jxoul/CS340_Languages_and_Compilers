@@ -12,9 +12,7 @@
 	#include "src/manager/manager.h"
 	#include "src/tcode/tcode.h"
 %}
-/*
-*	Dilwseis
-*/
+
 
 /* expect 1 confict ifelse */
 
@@ -54,7 +52,7 @@
 %type <stmtVal>		stmt stmts loopstmt block if returnstmt funcbody
 %type <forVal>		forprefix
 
-/* proteraiotita & proseteristikotita */
+
 %right		ASSIGN
 %left		OR
 %left		AND
@@ -68,12 +66,10 @@
 %left		LPAR RPAR
 
 %%
-/*
-*	Perigrafi
-*/
+
 
 program:	 stmts
-	|	/* exmpty */
+	|	
 	;
 
 stmts:		stmt 			{$$ = Manager_stmt($1);}
@@ -270,14 +266,11 @@ returnstmt:	RET SCOL		{$$ = Manager_return();}
 	;
 	
 %%
-/*
-*	Epilogos
-*/
+
 int main(){
 	FATAL_ERROR(SymbolTable_create(), "Cant allocate memory for symbol table");
 	push_loop(0);
 	yyparse();
-/*	print_quads();*/
 	instructions_make();
 	textfile();
 	binaryfile();
