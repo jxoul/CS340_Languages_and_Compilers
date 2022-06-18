@@ -238,7 +238,7 @@ char* copyStr(char* buffer){
 	return final;
 }
 
-/* Kathe fora pou synantame multiline comment  dimourgei ena kainourgio node sti lista me ta comments*/
+
 void openComm(unsigned int line) {
     
 	struct commNode *temp;
@@ -265,7 +265,7 @@ void openComm(unsigned int line) {
 }
 
 
-/*Ksekinaei api to telos tis comment listas kai psaxnei na brei comment pou den einai kleisto*/
+
 void closeComm(unsigned int line) {
     
 	struct commNode* curr = commTail;
