@@ -304,9 +304,6 @@ void avm_tablelem_set(AVM_table* t, AVM_memcell* key, AVM_memcell* value){
 					memset(tmp,0,sizeof(AVM_table_bucket));
 					avm_assign(&tmp->key,key);
 					avm_assign(&tmp->value, value);
-				/*	tmp->next = t->ufuncIndexed[hash];
-					t->ufuncIndexed[hash] = tmp;
-				*/
 					curr = t->ufuncIndexed[hash];	
 					tmp->next = NULL;
 					if(curr){
@@ -327,8 +324,6 @@ void avm_tablelem_set(AVM_table* t, AVM_memcell* key, AVM_memcell* value){
 					memset(tmp,0,sizeof(AVM_table_bucket));
 					avm_assign(&tmp->key,key);
 					avm_assign(&tmp->value, value);
-					/*tmp->next = t->lfuncIndexed[hash];
-					t->lfuncIndexed[hash] = tmp;*/
 					curr = t->lfuncIndexed[hash];	
 					tmp->next = NULL;
 					if(curr){
