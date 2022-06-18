@@ -187,9 +187,7 @@ void libfunc_argument(){
 			retval.type = nil_m;
 		}else{
 
-			/*retval.type = number_m;
-			retval.data.numVal = avm_get_envvalue(p_topsp+ AVM_STACKENV_SIZE + i);
-			*/avm_assign(&retval, &stack[p_topsp]);
+			avm_assign(&retval, &stack[p_topsp]);
 		}
 
 	}else{
